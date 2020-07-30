@@ -6,32 +6,33 @@
     <title>Daniel Jun Suguimoto</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins" rel="stylesheet">
 
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/8fd5004c40.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="assets/logo-branco.png">
+            <h4>Daniel&nbsp;Suguimoto</h4>
+        </div>
+
+        <ul class="navbar__links">
+            <li><a href="#home">Ínicio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li style="display: none;"><a href="#work">Trabalho</a></li>
+            <li style="display: none;"><a href="#contact">Contato</a></li>
+        </ul>
+
+        <div class="navbar__burguer">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </div>
+    </nav>
+
     <div class="app">
-        <nav class="navbar">
-            <div class="navbar__logo">
-                <img src="assets/logo-branco.png">
-                <h4>Daniel&nbsp;Suguimoto</h4>
-            </div>
-
-            <!-- <ul class="navbar__links">
-                <li><a href="#home">Ínicio</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Trabalho</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-
-            <div class="navbar__burguer">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </div> -->
-        </nav>
-
-        <div id="home">
+        <div id="home" class="section">
             <img class="home__avatar" src="assets/avatar.png">
 
             <div class="home__description">
@@ -40,7 +41,28 @@
                 <h2 class="home__description__role">Fullstack&nbsp;Developer</h2>
             </div>
         </div>
+
+        <div id="about" class="section">
+            <h1 class="about__title">Sobre mim</h1>
+
+            <div class="about__description">
+                <p><b>Programador e desenvolvedor</b> natural de Guararema-SP, onde nasceu no dia 21 de Fevereiro de 1990, e atualmente morando em Bauru-SP desde 2008, onde obteve os títulos de Bacharel em Ciência da Computação pela <b>UNESP</b> e de MBA em Gerenciamento de Projetos pela <b>FGV.</b></p>
+
+                <p>Teve início na carreira de análise e desenvolvimendo de sistemas em 2011 quando descobriu o que hoje é uma de suas maiores paixões: <b>programação</b>. Já atuou no desenvolvimento de sistemas complexos na área da <b>Educação</b> e de <b>Turismo</b> e hoje presta serviços de desenvolvimento de sistemas no modelo <b>Outsourcing</b>.</p>
+
+                <p>Adquiriu conhecimento em várias linguagens de programação nessa trajetória e ainda continua estudando para aprender muito mais, pois ama encarar <b>Desafios</b> e <b>Novidades</b>.</p>
+            </div>
+
+            <img class="about__avatar" src="assets/avatar2.png">
+        </div>
+
+        <div id="work" class="section" style="display: none;">
+        </div>
+
+        <div id="contact" class="section" style="display: none;">
+        </div>
     </div>
+
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
