@@ -24,6 +24,17 @@
     width: 100%;
     z-index: 9999;
     box-shadow: 0 5px 20px #2e3766;
+    transition: 1s;
+}
+
+.navbar.small {
+    height: 5vh;
+    transition: 1s;
+}
+
+.navbar.small .navbar__logo > img {
+    max-height: 4vh;
+    transition: 1s;
 }
 
 .navbar__logo {
@@ -42,9 +53,10 @@
 .navbar__logo > img {
     max-height: 6vh;
     margin-right: 15px;
-    border: 1px solid #fff;
+    border: 1px solid #e0dede;
     border-radius: 4px;
     padding: 2px 6px;
+    transition: 1s;
 }
 
 .navbar__links {
@@ -84,6 +96,15 @@
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     flex-wrap: wrap;
+}
+
+.section__title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 4vh;
+    font-weight: bold;
+    color: #454c8d;
+    flex: 1 0 100%;
+    text-shadow: 3px 5px 5px rgba(65, 64, 64, 0.7);
 }
 
 .home__avatar {
@@ -132,20 +153,11 @@
     box-shadow: 0 0 10px rgba(84, 100, 189, 0.6);
 }
 
-.about__title {
-    font-family: 'Indie Flower', cursive;
-    font-size: 7vh;
-    font-weight: bold;
-    color: #454c8d;
-    flex: 1 0 100%;
-    text-shadow: 3px 5px 5px rgba(65, 64, 64, 0.7);
-}
-
 .about__description {
     flex-basis: 60%;
     align-self: flex-start;
     font-size: 20px;
-    color: #303030;
+    color: #464646;
     padding-right: 15px;
     text-align: justify;
     letter-spacing: 2px;
@@ -160,6 +172,141 @@
     margin-left: 30px;
 }
 
+.timeline {
+    align-self: flex-start;
+    padding-top: 100px;
+    flex: 1 1 60%;
+}
+
+.timeline__separator {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.timeline__separator::before,
+.timeline__separator::after {
+    content: '';
+    width: 40%;
+    height: 1px;
+    background: #454c8d;
+}
+
+.timeline__separator .fas {
+    margin: 0 15px;
+    font-size: 28px;
+    color: #454c8d;
+}
+
+.timeline__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin: 30px 0;
+    color: #464646;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.timeline__item__subject .fas {
+    vertical-align: middle;
+}
+
+.timeline__item__subject {
+    text-align: center;
+}
+
+.timeline__item__place {
+    text-align: right;
+}
+
+.knowledge {
+    align-self: flex-start;
+    padding-top: 100px;
+    flex: 1 1 30%;
+    margin-left: 80px;
+}
+
+.knowledge .section__title {
+    margin-bottom: 40px;
+}
+
+.knowledge p {
+    color: #464646;
+}
+
+.knowledge__bar {
+    background: #adadad;
+    height: 2vh;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.knowledge__bar__inner {
+    background: #454c8d;
+    height: 100%;
+}
+
+.empty {
+    width: 0;
+    transition: 2s;
+}
+
+.html {
+    width: 90%;
+    transition: 2s;
+}
+
+.css {
+    width: 70%;
+    transition: 2s;
+}
+
+.javascript {
+    width: 80%;
+    transition: 2s;
+}
+
+.php {
+    width: 90%;
+    transition: 2s;
+}
+
+.csharp {
+    width: 95%;
+    transition: 2s;
+}
+
+.scrum {
+    width: 90%;
+    transition: 2s;
+}
+
+.git {
+    width: 80%;
+    transition: 2s;
+}
+
+.footer {
+    height: 8vh;
+    width: 100%;
+    background: #5464bd;
+    color: #e0dede;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer img {
+    max-height: 5vh;
+    margin-right: 10px;
+    border: 1px solid #e0dede;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
 @media screen and (max-width: 1024px) {
     .navbar__links {
         width: 50%;
@@ -172,6 +319,11 @@
     .home__description__logo {
         width: 70%;
     }
+
+    .curriculum {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -180,16 +332,16 @@
     }
 
     .navbar__links {
-        position: absolute;
+        position: fixed;
         right: 0;
-        top: 8vh;
-        height: 92vh;
+        top: 0;
+        height: 100vh;
         background: #5464bd;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 50%;
-        transform: translateX(100%);
+        margin-right: -100%;
         transition: transform 0.5s ease-in;
     }
 
@@ -214,7 +366,7 @@
     }
 
     .navbar__links--active {
-        transform: translateX(0%);
+        margin-right: 0;
     }
 
     .section {
@@ -237,6 +389,12 @@
 
     .about__avatar {
         display: none;
+    }
+
+    .timeline, .knowledge {
+        flex: 1 1 100%;
+        width: 100%;
+        margin: 0;
     }
 }
 

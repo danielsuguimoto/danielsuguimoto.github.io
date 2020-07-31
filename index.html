@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/favicon.ico" />
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/8fd5004c40.js" crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@
         <ul class="navbar__links">
             <li><a href="#home">Ínicio</a></li>
             <li><a href="#about">Sobre</a></li>
-            <li style="display: none;"><a href="#work">Trabalho</a></li>
+            <li><a href="#curriculum">Currículo</a></li>
             <li style="display: none;"><a href="#contact">Contato</a></li>
         </ul>
 
@@ -43,7 +44,7 @@
         </div>
 
         <div id="about" class="section">
-            <h1 class="about__title">Sobre mim</h1>
+            <h1 class="section__title">Sobre mim</h1>
 
             <div class="about__description">
                 <p><b>Programador e desenvolvedor</b> natural de Guararema-SP, onde nasceu no dia 21 de Fevereiro de 1990, e atualmente morando em Bauru-SP desde 2008, onde obteve os títulos de Bacharel em Ciência da Computação pela <b>UNESP</b> e de MBA em Gerenciamento de Projetos pela <b>FGV.</b></p>
@@ -56,11 +57,100 @@
             <img class="about__avatar" src="assets/avatar2.png">
         </div>
 
-        <div id="work" class="section" style="display: none;">
+        <div id="curriculum" class="section">
+            <div class="timeline">
+                <h1 class="section__title">Educação e experiência</h1>
+
+                <div class="timeline__separator">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <div class="timeline__group">
+                    <div class="timeline__item">
+                        <div class="timeline__item__period">2008&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;2011</div>
+                        <div class="timeline__item__subject">Ciência da Computação</div>
+                        <div class="timeline__item__place">UNESP</div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__item__period">2013&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;2016</div>
+                        <div class="timeline__item__subject">Gerenciamento de Projetos</div>
+                        <div class="timeline__item__place">FGV</div>
+                    </div>
+                </div>
+
+                <div class="timeline__separator">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+
+                <div class="timeline__group">
+                    <div class="timeline__item">
+                        <div class="timeline__item__period">2011&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;2018</div>
+                        <div class="timeline__item__subject">Estagiário ~ Analista Sênior</div>
+                        <div class="timeline__item__place">MSTech</div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__item__period">2018&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;2019</div>
+                        <div class="timeline__item__subject">Analista Sênior</div>
+                        <div class="timeline__item__place">Partner Fusion</div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__item__period">2019&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;Hoje</div>
+                        <div class="timeline__item__subject">Desenvolvedor Fullstack</div>
+                        <div class="timeline__item__place">Firework Web & Mobile</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="knowledge">
+                <h1 class="section__title">Conhecimento</h1>
+
+                <p>HTML</p>
+                <div class="knowledge__bar">
+                    <div data-skill="html" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>CSS</p>
+                <div class="knowledge__bar">
+                    <div data-skill="css" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>Javascript</p>
+                <div class="knowledge__bar">
+                    <div data-skill="javascript" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>PHP</p>
+                <div class="knowledge__bar">
+                    <div data-skill="php" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>C#</p>
+                <div class="knowledge__bar">
+                    <div data-skill="csharp" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>Scrum</p>
+                <div class="knowledge__bar">
+                    <div data-skill="scrum" class="knowledge__bar__inner empty"></div>
+                </div>
+
+                <p>Git</p>
+                <div class="knowledge__bar">
+                    <div data-skill="git" class="knowledge__bar__inner empty"></div>
+                </div>
+            </div>
         </div>
 
         <div id="contact" class="section" style="display: none;">
         </div>
+    </div>
+
+    <div class="footer">
+        <span><img src="assets/logo-branco.png"></span>
+        <span><i class="far fa-copyright"></i> Daniel Jun Suguimoto</span>
     </div>
 
     <script type="text/javascript" src="js/app.js"></script>
