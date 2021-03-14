@@ -23,7 +23,7 @@
             <li><a href="#home">Ínicio</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#curriculum">Currículo</a></li>
-            <li style="display: none;"><a href="#contact">Contato</a></li>
+            <li><a href="#contact">Contato</a></li>
         </ul>
 
         <div class="navbar__burguer">
@@ -58,7 +58,7 @@
         </div>
 
         <div id="curriculum" class="section">
-            <div class="timeline">
+            <div class="subsection">
                 <h1 class="section__title">Educação e experiência</h1>
 
                 <div class="timeline__separator">
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="knowledge">
+            <div class="subsection">
                 <h1 class="section__title">Conhecimento</h1>
 
                 <p>HTML</p>
@@ -144,7 +144,62 @@
             </div>
         </div>
 
-        <div id="contact" class="section" style="display: none;">
+        <div id="contact" class="section">
+            <div class="subsection">
+                <h1 class="section__title">Contato</h1>
+
+                <div class="contact__form">
+                    <div class="contact__input-group">
+                        <input type="text" class="contact__text-input" autocomplete="off" required>
+
+                        <label class="contact__label">
+                            <span class="contact__label__content">Nome</span>
+                        </label>
+                    </div>
+
+                    <div class="contact__input-group">
+                        <input type="text" class="contact__text-input" autocomplete="off" required>
+
+                        <label class="contact__label">
+                            <span class="contact__label__content">Email</span>
+                        </label>
+                    </div>
+
+                    <div class="contact__input-group">
+                        <input type="text" class="contact__text-input" autocomplete="off" required>
+
+                        <label class="contact__label">
+                            <span class="contact__label__content">Assunto</span>
+                        </label>
+                    </div>
+
+                    <div class="contact__input-group textarea">
+                        <textarea class="contact__text-input" rows="5" cols="30"
+                            autocomplete="off" data-gramm_editor="false"
+                            spellcheck="false" required
+                        ></textarea>
+
+                        <label class="contact__label">
+                            <span class="contact__label__content">Mensagem</span>
+                        </label>
+                    </div>
+
+                    <button class="contact__send-button">Enviar</button>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h1 class="section__title">Social</h1>
+
+                <ul class="social-media">
+                    <li class="social-media__item">
+                        <a href="https://instagram/djsuguimoto" target="_blank">
+                            <i class="fab fa-instagram-square fa-2x"></i>
+                            <span>@djsuguimoto</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
