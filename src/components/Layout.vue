@@ -1,6 +1,6 @@
 <template>
     <navbar></navbar>
-    <div class="container mx-auto flex justify-around content-start h-screen">
+    <div class="container flex flex-col h-screen w-screen content-center">
         <slot></slot>
     </div>
 </template>

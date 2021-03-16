@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins');
+
+html, body {
+    @apply bg-gray-50
+}
+
+.title {
+    text-shadow: 3px 5px 5px rgba(141, 137, 137, 0.7);
+}
+
+.avatar {
+    box-shadow: 10px 15px 16px rgba(141, 137, 137, 0.7);
+}
