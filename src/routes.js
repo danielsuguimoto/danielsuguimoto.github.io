@@ -16,8 +16,8 @@ export default {
         component: CurriculumComponent,
         name: 'Currículo',
     },
-    '/contato': {
-        component: ContactComponent,
-        name: 'Contato',
-    },
+    // '/contato': {
+    //     component: ContactComponent,
+    //     name: 'Contato',
+    // },
 };

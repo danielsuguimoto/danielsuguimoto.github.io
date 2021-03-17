@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins');
 
 html, body {
-    @apply bg-gray-50
+    @apply bg-gray-100
 }
 
 .title {
