@@ -39,10 +39,26 @@
 
 <script>
 import Layout from "../components/Layout.vue";
+import ScrollReveal from 'scrollreveal';
 
 export default {
     components: {
         Layout,
+    },
+
+    mounted () {
+        const scrollReveal = ScrollReveal({
+            reset: true,
+            delay: 300,
+            distance: '100%',
+            rotate: {
+                x: 300,
+                z: 200
+            },
+            scale: 0.3,
+        });
+
+        scrollReveal.reveal('.avatar', { origin: 'right' });
     },
 };
 </script>
