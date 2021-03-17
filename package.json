@@ -4,14 +4,23 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint --ext js,vue ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "lodash": "^4.17.21",
+    "scrollreveal": "^4.0.9",
     "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@fireworkweb/eslint-config": "^1.0.0",
     "@vitejs/plugin-vue": "^1.1.5",
     "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.22.0",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.3",
     "vite": "^2.0.5"
   }
 }
