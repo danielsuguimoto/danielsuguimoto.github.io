@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&family=Poppins');
 
 html, body {
     @apply bg-gray-100
