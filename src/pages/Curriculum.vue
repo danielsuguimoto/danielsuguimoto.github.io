@@ -1,76 +1,80 @@
 <template>
-    <layout>
-        <div class="flex flex-wrap justify-around">
-            <div class="w-5/12">
-                <h1
-                    class="w-screnn pt-20 pb-14 text-4xl text-indigo font-bold antialiased tracking-wider title"
+    <div class="flex flex-wrap justify-around">
+        <div class="w-5/12">
+            <h1
+                class="w-screnn pt-20 pb-14 text-4xl text-indigo font-bold antialiased tracking-wider title"
+            >
+                Educação e experiência
+            </h1>
+
+            <template v-for="group in experienceGroups" :key="group.name">
+                <div class="separator flex justify-center items-center my-14">
+                    <i class="fas mx-6 text-indigo" :class="group.icon"></i>
+                </div>
+
+                <div
+                    v-for="(item, index) in group.items"
+                    :key="index"
+                    class="grid grid-cols-4 my-10 tracking-wide text-indigo-dark"
                 >
-                    Educação e experiência
-                </h1>
-
-                <template v-for="group in experienceGroups" :key="group.name">
-                    <div class="separator flex justify-center items-center my-14">
-                        <i class="fas mx-6 text-indigo" :class="group.icon"></i>
+                    <div>
+                        {{ item.start }}&nbsp;<i
+                            class="fas fa-long-arrow-alt-right"
+                        ></i
+                        >&nbsp;{{ item.end }}
                     </div>
-
                     <div
-                        v-for="(item, index) in group.items"
-                        :key="index"
-                        class="grid grid-cols-4 my-10 tracking-wide text-indigo-dark"
-                    >
-                        <div>{{item.start}}&nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;{{item.end}}</div>
-                        <div class="col-span-2 text-center" v-text="item.subject"></div>
-                        <div class="text-right" v-text="item.place"></div>
-                    </div>
-                </template>
-            </div>
-
-            <div class="w-5/12">
-                <h1
-                    class="w-screnn pt-20 pb-12 text-4xl text-indigo font-bold antialiased tracking-wider title mb-14"
-                >
-                    Conhecimento
-                </h1>
-
-                <template v-for="item in knowledges" :key="item.skill">
-                    <p class="mb-2 text-indigo-dark" v-text="item.skill"></p>
-                    <div class="h-4 border-2 rounded-3xl mb-6">
-                        <div class="bg-indigo h-full rounded-3xl" :class="getSkillClass(item)"></div>
-                    </div>
-                </template>
-            </div>
+                        class="col-span-2 text-center"
+                        v-text="item.subject"
+                    ></div>
+                    <div class="text-right" v-text="item.place"></div>
+                </div>
+            </template>
         </div>
-    </layout>
+
+        <div class="w-5/12">
+            <h1
+                class="w-screnn pt-20 pb-12 text-4xl text-indigo font-bold antialiased tracking-wider title mb-14"
+            >
+                Conhecimento
+            </h1>
+
+            <template v-for="item in knowledges" :key="item.skill">
+                <p class="mb-2 text-indigo-dark" v-text="item.skill"></p>
+                <div class="h-4 border-2 rounded-3xl mb-6">
+                    <div
+                        class="bg-indigo h-full rounded-3xl"
+                        :class="getSkillClass(item)"
+                    ></div>
+                </div>
+            </template>
+        </div>
+    </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import Layout from "../components/Layout.vue";
+import { ref } from "vue";
 
 export default {
-    components: {
-        Layout,
-    },
-
     methods: {
-        getSkillClass (skill) {
+        getSkillClass(skill) {
             if (skill.fill) {
                 return skill.class;
             }
 
-            return 'bar-empty';
+            return "bar-empty";
         },
 
-        fillSkills () {
-            this.knowledges.forEach(item => item.fill = true);
+        fillSkills() {
+            this.knowledges.forEach((item) => (item.fill = true));
         },
     },
 
-    mounted () {
+    mounted() {
         setTimeout(this.fillSkills, 500);
     },
 
-    setup () {
+    setup() {
         const experienceGroups = ref([
             {
                 icon: "fa-graduation-cap",
@@ -118,43 +122,43 @@ export default {
 
         const knowledges = ref([
             {
-                skill: 'HTML',
-                class: 'bar-90',
+                skill: "HTML",
+                class: "bar-90",
                 fill: false,
             },
             {
-                skill: 'CSS',
-                class: 'bar-70',
+                skill: "CSS",
+                class: "bar-70",
                 fill: false,
             },
             {
-                skill: 'Javascript',
-                class: 'bar-80',
+                skill: "Javascript",
+                class: "bar-80",
                 fill: false,
             },
             {
-                skill: 'PHP',
-                class: 'bar-90',
+                skill: "PHP",
+                class: "bar-90",
                 fill: false,
             },
             {
-                skill: 'C#',
-                class: 'bar-90',
+                skill: "C#",
+                class: "bar-90",
                 fill: false,
             },
             {
-                skill: 'Golang',
-                class: 'bar-80',
+                skill: "Golang",
+                class: "bar-80",
                 fill: false,
             },
             {
-                skill: 'Scrum',
-                class: 'bar-90',
+                skill: "Scrum",
+                class: "bar-90",
                 fill: false,
             },
             {
-                skill: 'Git',
-                class: 'bar-80',
+                skill: "Git",
+                class: "bar-80",
                 fiil: false,
             },
         ]);
@@ -163,7 +167,7 @@ export default {
             experienceGroups,
             knowledges,
         };
-    }
+    },
 };
 </script>
 

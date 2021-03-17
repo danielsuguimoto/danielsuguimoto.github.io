@@ -1,15 +1,8 @@
 <template>
-    <layout>
-        <p>Contact</p>
-    </layout>
+    <p>Contact</p>
 </template>
 
 <script>
-import Layout from '../components/Layout.vue';
-
 export default {
-    components: {
-        Layout,
-    },
 }
 </script>
