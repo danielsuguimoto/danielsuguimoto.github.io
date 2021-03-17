@@ -1,8 +1,8 @@
 <template>
-    <div class="flex justify-around content-start pt-20 w-screen">
+    <div class="flex justify-around content-center pt-20 w-screen h-screen">
         <img
             id="avatar"
-            class="avatar rounded-full h-1/2 self-center"
+            class="avatar rounded-full w-1/3 self-center"
             src="../assets/avatar.png"
         />
 
