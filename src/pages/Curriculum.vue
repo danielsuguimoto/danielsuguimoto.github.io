@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-wrap justify-around">
+    <div class="flex flex-wrap justify-around w-full">
         <div class="w-5/12">
             <h1
-                class="w-screnn pt-20 pb-14 text-4xl text-indigo font-bold antialiased tracking-wider title"
+                class="w-full py-10 text-4xl text-indigo font-bold antialiased tracking-wider title"
             >
                 Educação e experiência
             </h1>
@@ -27,14 +27,16 @@
                         class="col-span-2 text-center"
                         v-text="item.subject"
                     ></div>
-                    <div class="text-right" v-text="item.place"></div>
+                    <div class="text-right">
+                        <a :href="item.link" target="_blank" v-text="item.place"></a>
+                    </div>
                 </div>
             </template>
         </div>
 
         <div class="w-5/12">
             <h1
-                class="w-screnn pt-20 pb-12 text-4xl text-indigo font-bold antialiased tracking-wider title mb-14"
+                class="w-full py-10 text-4xl text-indigo font-bold antialiased tracking-wider title mb-14"
             >
                 Conhecimento
             </h1>
@@ -81,40 +83,45 @@ export default {
                 name: "education",
                 items: [
                     {
-                        start: "2008",
-                        end: "2011",
-                        subject: "Ciência da Computação",
-                        place: "UNESP",
+                        start: '2008',
+                        end: '2011',
+                        subject: 'Ciência da Computação',
+                        place: 'UNESP',
+                        link: 'https://www2.unesp.br',
                     },
                     {
-                        start: "2013",
-                        end: "2016",
-                        subject: "Gerenciamento de Projetos",
-                        place: "FGV",
+                        start: '2013',
+                        end: '2016',
+                        subject: 'Gerenciamento de Projetos',
+                        place: 'FGV',
+                        link: 'https://portal.fgv.br',
                     },
                 ],
             },
             {
-                icon: "fa-briefcase",
-                name: "experience",
+                icon: 'fa-briefcase',
+                name: 'experience',
                 items: [
                     {
-                        start: "2011",
-                        end: "2018",
-                        subject: "Estagiário ~ Analista Sênior",
-                        place: "MSTech",
+                        start: '2011',
+                        end: '2018',
+                        subject: 'Estagiário ~ Analista Sênior',
+                        place: 'MSTech',
+                        link: 'http://www.mstech.com.br',
                     },
                     {
-                        start: "2018",
-                        end: "2019",
-                        subject: "Analista Sênior",
-                        place: "Partner Fusion",
+                        start: '2018',
+                        end: '2019',
+                        subject: 'Analista Sênior',
+                        place: 'Partner Fusion',
+                        link: 'https://www.partnerfusion.com'
                     },
                     {
-                        start: "2019",
-                        end: "Hoje",
-                        subject: "Desenvolvedor Fullstack Sênior",
-                        place: "Firework Web & Mobile",
+                        start: '2019',
+                        end: 'Hoje',
+                        subject: 'Desenvolvedor Fullstack Sênior',
+                        place: 'Firework Web & Mobile',
+                        link: 'https://fireworkweb.com'
                     },
                 ],
             },

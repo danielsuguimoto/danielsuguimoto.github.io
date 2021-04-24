@@ -1,11 +1,11 @@
 <template>
     <h1
-        class="w-screnn py-20 px-10 text-4xl text-indigo font-bold antialiased tracking-wider title"
+        class="w-full pt-10 px-10 text-4xl text-indigo font-bold antialiased tracking-wider title"
     >
         Sobre mim
     </h1>
 
-    <div class="flex justify-around w-screen">
+    <div class="flex flex-grow justify-around w-full">
         <div
             class="w-1/2 text-xl self-center text-indigo-dark tracking-wider text-justify"
         >
@@ -51,9 +51,9 @@ export default {
     setup() {
         return {
             scrollReveal: ScrollReveal({
-                reset: true,
-                delay: 300,
+                delay: 500,
                 distance: "100%",
+                duration: 1000,
                 rotate: {
                     x: 300,
                     z: 200,

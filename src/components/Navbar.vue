@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar flex justify-around items-center h-14 fixed w-full text-white bg-indigo">
+    <nav class="navbar flex justify-around items-center h-14 w-full text-white bg-indigo">
         <div class="navbar__logo flex justify-between items-center">
             <img src="../assets/logo-branco.png" class="max-h-10 mr-3">
             <h4 class="uppercase text-xl">Daniel&nbsp;Suguimoto</h4>
