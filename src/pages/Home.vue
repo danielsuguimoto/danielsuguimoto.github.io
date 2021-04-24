@@ -32,27 +32,12 @@
 </template>
 
 <script>
-import ScrollReveal from "scrollreveal";
+import scrollreveal from '../scrollreveal';
 
 export default {
     mounted() {
-        this.scrollReveal.reveal("#avatar", { origin: "left" });
-        this.scrollReveal.reveal("#logo", { origin: "right" });
-    },
-
-    setup() {
-        return {
-            scrollReveal: ScrollReveal({
-                delay: 500,
-                distance: "100%",
-                duration: 1000,
-                rotate: {
-                    x: 300,
-                    z: 200,
-                },
-                scale: 0.3,
-            }),
-        };
+        scrollreveal.reveal("#avatar", { origin: "left" });
+        scrollreveal.reveal("#logo", { origin: "right" });
     },
 };
 </script>

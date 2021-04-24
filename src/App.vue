@@ -1,9 +1,8 @@
 <template>
     <navbar :active="currentPage" @navigate="navigateTo"></navbar>
 
-    <div class="flex flex-col flex-grow w-full content-center overflow-auto">
+    <div class="page-container flex flex-col flex-grow w-full content-center overflow-auto">
         <component
-            v-if="! loading"
             ref="pageComponent"
             :is="currentComponent"
         ></component>
@@ -34,15 +33,14 @@ export default {
 
     methods: {
         navigateTo(page) {
-            this.loading = true;
             const loading = this.$loading({
-                spinner: 'el-icon-loading',
+                lock: true,
+                target: '.page-container',
             });
 
             setTimeout(() => {
                 this.currentPage = page
                 this.$nextTick(() => {
-                    this.loading = false;
                     loading.close();
                 });
             }, 800);
@@ -50,13 +48,17 @@ export default {
     },
 
     setup() {
-        const currentPage = ref('home'),
-            loading = ref(false);
+        const currentPage = ref('home');
 
         return {
             currentPage,
-            loading,
         };
     }
 };
 </script>
+
+<style>
+.el-loading-spinner {
+    left: 50%;
+}
+</style>
