@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "element-plus": "^1.0.2-beta.40",
     "lodash": "^4.17.21",
     "scrollreveal": "^4.0.9",
     "vue": "^3.0.5"

@@ -1,10 +1,15 @@
 <template>
-    <navbar :active="currentPage" @navigate="currentPage = $event"></navbar>
+    <navbar :active="currentPage" @navigate="navigateTo"></navbar>
 
-    <div class="container flex flex-col h-screen w-screen content-center">
+    <div class="flex flex-col flex-grow w-full content-center overflow-auto">
         <component
+            ref="pageComponent"
             :is="currentComponent"
         ></component>
+    </div>
+
+    <div class="h-14 w-full text-white bg-indigo text-center flex justify-center items-center">
+        <h4>Daniel Jun Suguimoto © Copyright 2021</h4>
     </div>
 </template>
 <script>
@@ -26,11 +31,27 @@ export default {
         },
     },
 
+    methods: {
+        navigateTo(page) {
+            const loading = this.$loading({
+                spinner: 'el-icon-loading',
+            });
+
+            setTimeout(() => {
+                this.currentPage = page
+                this.$refs.pageComponent.$forceUpdate();
+                this.$nextTick(() => loading.close());
+            }, 1000);
+        }
+    },
+
     setup() {
-        const currentPage = ref('home');
+        const currentPage = ref('home'),
+            loading = ref(false);
 
         return {
             currentPage,
+            loading,
         };
     }
 };

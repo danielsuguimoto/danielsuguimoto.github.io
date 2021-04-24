@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-around content-center pt-20 w-screen h-screen">
+    <div class="flex flex-grow justify-around content-center w-full">
         <img
             id="avatar"
             class="avatar rounded-full w-1/3 self-center"
@@ -11,11 +11,11 @@
         >
             <img
                 id="logo"
-                class="logo border-4 border-black rounded-3xl px-6 py-3 w-1/2 avatar"
+                class="logo border-4 border-black rounded-3xl px-6 w-1/2 avatar"
                 src="../assets/logo-preto.png"
             />
 
-            <div>
+            <div class="pt-10">
                 <h1
                     class="text-center text-6xl text-indigo tracking-wide font-bold antialiased"
                 >
@@ -43,9 +43,9 @@ export default {
     setup() {
         return {
             scrollReveal: ScrollReveal({
-                reset: true,
-                delay: 300,
+                delay: 500,
                 distance: "100%",
+                duration: 1000,
                 rotate: {
                     x: 300,
                     z: 200,

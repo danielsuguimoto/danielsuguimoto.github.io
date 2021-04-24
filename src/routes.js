@@ -4,15 +4,15 @@ import CurriculumComponent from './pages/Curriculum.vue';
 import ContactComponent from './pages/Contact.vue';
 
 export default {
-    'home': {
+    home: {
         component: HomeComponent,
         name: 'Início',
     },
-    'about': {
+    about: {
         component: AboutComponent,
         name: 'Sobre',
     },
-    'curriculum': {
+    curriculum: {
         component: CurriculumComponent,
         name: 'Currículo',
     },
