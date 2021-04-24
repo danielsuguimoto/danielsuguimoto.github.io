@@ -3,6 +3,7 @@
 
     <div class="flex flex-col flex-grow w-full content-center overflow-auto">
         <component
+            v-if="! loading"
             ref="pageComponent"
             :is="currentComponent"
         ></component>
@@ -33,15 +34,18 @@ export default {
 
     methods: {
         navigateTo(page) {
+            this.loading = true;
             const loading = this.$loading({
                 spinner: 'el-icon-loading',
             });
 
             setTimeout(() => {
                 this.currentPage = page
-                this.$refs.pageComponent.$forceUpdate();
-                this.$nextTick(() => loading.close());
-            }, 1000);
+                this.$nextTick(() => {
+                    this.loading = false;
+                    loading.close();
+                });
+            }, 800);
         }
     },
 
