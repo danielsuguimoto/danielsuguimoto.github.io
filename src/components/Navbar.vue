@@ -7,13 +7,15 @@
 
         <ul class="navbar__links flex justify-around list-none w-1/3 items-center h-full">
             <li
-                v-for="(route, name) in routes"
-                :key="name"
+                v-for="route in routes"
+                :key="route.name"
                 class="cursor-pointer text-lg h-full grid"
-                :class="liClass(name)"
-                @click="navigate(name)"
+                :class="liClass(route.path)"
             >
-                <span v-text="route.name" class="p-2 place-self-center"></span>
+                <router-link
+                    :to="route.path"
+                    class="p-2 place-self-center"
+                >{{ route.name }}</router-link>
             </li>
         </ul>
     </nav>
@@ -22,21 +24,16 @@
 <script>
 import routes from '../routes';
 export default {
-    props: {
-        active: {
-            type: String,
-            default: 'home',
-        }
+    computed: {
+        currentPath () {
+            return this.$route.path;
+        },
     },
 
     methods: {
-        navigate (name) {
-            this.$emit('navigate', name);
-        },
-
-        liClass (name) {
+        liClass (path) {
             return {
-                'is-active': this.active === name,
+                'is-active': this.currentPath === path,
             };
         }
     },
