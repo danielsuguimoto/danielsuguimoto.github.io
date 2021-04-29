@@ -2,20 +2,23 @@
     <div class="flex flex-wrap justify-around w-full">
         <div class="w-5/12">
             <h1
-                class="w-full py-10 text-4xl text-indigo font-bold antialiased tracking-wider title"
+                class="w-full py-10 text-4xl font-bold antialiased tracking-wider title"
             >
                 Educação e experiência
             </h1>
 
             <template v-for="group in experienceGroups" :key="group.name">
-                <div class="separator flex justify-center items-center my-14">
-                    <i class="fas mx-6 text-indigo" :class="group.icon"></i>
+                <div
+                    class="separator flex justify-center items-center my-14"
+                    :class="darkModeClass"
+                >
+                    <i class="fas mx-6" :class="group.icon"></i>
                 </div>
 
                 <div
                     v-for="(item, index) in group.items"
                     :key="index"
-                    class="grid grid-cols-4 my-10 tracking-wide text-indigo-dark"
+                    class="grid grid-cols-4 my-10 tracking-wide"
                 >
                     <div>
                         {{ item.start }}&nbsp;<i
@@ -36,13 +39,13 @@
 
         <div class="w-5/12">
             <h1
-                class="w-full py-10 text-4xl text-indigo font-bold antialiased tracking-wider title mb-14"
+                class="w-full py-10 text-4xl font-bold antialiased tracking-wider title mb-14"
             >
                 Conhecimento
             </h1>
 
             <template v-for="item in knowledges" :key="item.skill">
-                <p class="mb-2 text-indigo-dark" v-text="item.skill"></p>
+                <p class="mb-2" v-text="item.skill"></p>
                 <div class="h-4 border-2 rounded-3xl mb-6">
                     <div
                         class="bg-indigo h-full rounded-3xl"
@@ -55,29 +58,18 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useStore } from 'vuex'
 
 export default {
-    methods: {
-        getSkillClass(skill) {
-            if (skill.fill) {
-                return skill.class;
-            }
-
-            return "bar-empty";
-        },
-
-        fillSkills() {
-            this.knowledges.forEach((item) => (item.fill = true));
-        },
+    mounted () {
+        setTimeout(() => this.knowledges.forEach((item) => (item.fill = true)), 500);
     },
 
-    mounted() {
-        setTimeout(this.fillSkills, 500);
-    },
+    setup () {
+        const store = useStore();
 
-    setup() {
-        const experienceGroups = ref([
+        const experienceGroups = [
             {
                 icon: "fa-graduation-cap",
                 name: "education",
@@ -125,7 +117,7 @@ export default {
                     },
                 ],
             },
-        ]);
+        ];
 
         const knowledges = ref([
             {
@@ -171,6 +163,8 @@ export default {
         ]);
 
         return {
+            darkModeClass: computed(() => ({'dark-mode': store.state.darkMode})),
+            getSkillClass: (skill) => skill.fill ? skill.class : 'bar-empty',
             experienceGroups,
             knowledges,
         };
@@ -181,10 +175,15 @@ export default {
 <style>
 .separator::before,
 .separator::after {
+    @apply bg-indigo;
     content: "";
     width: 40%;
     height: 1px;
-    background: #454c8d;
+}
+
+.separator.dark-mode::before,
+.separator.dark-mode::after {
+    @apply bg-gray-300;
 }
 
 .bar-empty {

@@ -11,18 +11,20 @@
         >
             <img
                 id="logo"
-                class="logo border-4 border-black rounded-3xl px-6 w-1/2 avatar"
-                src="../assets/logo-preto.png"
+                class="logo border-4 rounded-3xl px-6 w-1/2 avatar"
+                :class="darkModeClass"
+                :src="logo"
             />
 
             <div class="pt-10">
                 <h1
-                    class="text-center text-6xl text-indigo tracking-wide font-bold antialiased"
+                    class="text-center text-6xl name tracking-wide font-bold antialiased"
+                    :class="darkModeClass"
                 >
                     Daniel Jun&nbsp;Suguimoto
                 </h1>
                 <h2
-                    class="role text-center text-2xl mt-6 text-indigo-dark tracking-wide"
+                    class="role text-center text-2xl mt-6 tracking-wide"
                 >
                     Fullstack&nbsp;Developer
                 </h2>
@@ -32,17 +34,40 @@
 </template>
 
 <script>
-import scrollreveal from '../scrollreveal';
+import { computed } from 'vue';
+import { useStore } from 'vuex'
+import logoPreto from '../assets/logo-preto.png';
+import logoBranco from '../assets/logo-branco.png';
 
 export default {
-    mounted() {
-        scrollreveal.reveal("#avatar", { origin: "left" });
-        scrollreveal.reveal("#logo", { origin: "right" });
+    setup () {
+        const store = useStore();
+
+        return {
+            darkModeClass: computed(() => ({'dark-mode': store.state.darkMode})),
+            logo: computed(() => store.state.darkMode ? logoBranco : logoPreto),
+        };
     },
-};
+}
 </script>
 
 <style>
+.logo {
+    @apply border-black;
+}
+
+.logo.dark-mode {
+    @apply border-white;
+}
+
+.name {
+    @apply text-indigo;
+}
+
+.name.dark-mode {
+    @apply text-indigo-light;
+}
+
 .role {
     text-shadow: 0 5px 6px rgba(141, 137, 137, 0.7);
 }
