@@ -1,13 +1,13 @@
 <template>
     <h1
-        class="w-full pt-10 px-10 text-4xl text-indigo font-bold antialiased tracking-wider title"
+        class="w-full pt-10 px-10 text-4xl font-bold antialiased tracking-wider title"
     >
         Sobre mim
     </h1>
 
     <div class="flex flex-grow justify-around w-full">
         <div
-            class="w-1/2 text-xl self-center text-indigo-dark tracking-wider text-justify"
+            class="w-1/2 text-xl self-center tracking-wider text-justify"
         >
             <p>
                 <b>Programador e desenvolvedor</b> natural de Guararema-SP, onde
@@ -39,13 +39,3 @@
         />
     </div>
 </template>
-
-<script>
-import scrollreveal from '../scrollreveal';
-
-export default {
-    mounted() {
-        scrollreveal.reveal(".avatar", { origin: "right" });
-    },
-};
-</script>
